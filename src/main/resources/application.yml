@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gptchat
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+security:
+  jwt:
+    token:
+      secret-key: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351
+      expire-length: 3600000 # Токен действителен 1 час
+
+server:
+  port: 8080
+
+# Логирование
+logging:
+  level:
+    org.springframework.security: INFO
